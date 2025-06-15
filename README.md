@@ -2,11 +2,10 @@
 
 ## Project Overview
 
-This project aims to develop a machine learning model that predicts the outcomes of ICC Men's Cricket World Cup matches using structured match-level metadata. The prediction focuses on identifying the winning team based on inputs such as venue, toss winner, toss decision, and participating teams.
+This project aims to develop a machine learning model that predicts the outcomes of ICC Men's Cricket World Cup matches using structured match-level metadata. The prediction focuses on identifying the winning team based on inputs such as venue, toss winner, toss decision and participating teams.
 
-The motivation behind this project stems from the complexity and multifactorial nature of cricket match outcomes, especially in international tournaments. Due to the unavailability of player-level statistics and weather information in the dataset, the model uses encoded categorical features at the team and match level.
+The motivation behind this project stems from the complexity and multifactorial nature of cricket match outcomes, especially in international tournaments. Due to the unavailability of player-level statistics and weather information in the dataset the model uses encoded categorical features at the team and match level.
 
----
 
 ## Dataset Description
 
@@ -23,7 +22,6 @@ Only match-level information was parsed from these files. The fields extracted a
 
 A total of 257 matches were successfully parsed and used for model training and evaluation. Ball-by-ball details and player-level statistics were excluded from this analysis.
 
----
 
 ## Exploratory Data Analysis (EDA)
 
@@ -34,15 +32,11 @@ EDA helped uncover trends and imbalances in the dataset. Key observations includ
 - Slight correlation (~51%) between toss winners and match winners.
 - Some venues host significantly more matches than others.
 
-Plots were generated to visualize team dominance and venue frequency.
-
----
-
 ## Model Development
 
 ### Model Selection Criteria
 
-The Random Forest algorithm was selected due to its interpretability, resistance to overfitting, and effectiveness with categorical variables. It is also suitable for imbalanced datasets when class weights are properly handled.
+The Random Forest algorithm was selected due to its interpretability, resistance to overfitting and effectiveness with categorical variables. It is also suitable for imbalanced datasets when class weights are properly handled.
 
 ### Model Architecture
 
@@ -58,13 +52,12 @@ The target variable is the match winner, which was also label-encoded. A `Random
 
 ### Training Process
 
-The full dataset was cleaned and preprocessed, and all categorical variables were label-encoded. A stratified 80-20 split was used to maintain the class distribution across training and testing sets. The Random Forest model was then trained on the training data and predictions were made on the test data for evaluation.
+The full dataset was cleaned and preprocessed and all categorical variables were label-encoded. A stratified 80-20 split was used to maintain the class distribution across training and testing sets. The Random Forest model was then trained on the training data and predictions were made on the test data for evaluation.
 
----
 
 ## Evaluation Metrics
 
-The model achieved an accuracy of approximately 48%. Evaluation was done using the classification report from scikit-learn, which provided precision, recall, and F1-score per class.
+The model achieved an accuracy of approximately 48%. Evaluation was done using the classification report from scikit-learn, which provided precision, recall and F1-score per class.
 
 Example results:
 - Australia: Precision = 1.00, Recall = 0.89
